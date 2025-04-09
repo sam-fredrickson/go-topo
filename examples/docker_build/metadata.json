@@ -1,0 +1,39 @@
+{
+  "images": [
+    {
+      "name": "base-image",
+      "path": "./images/base",
+      "dependencies": []
+    },
+    {
+      "name": "builder-image",
+      "path": "./images/builder",
+      "dependencies": ["base-image"]
+    },
+    {
+      "name": "app-image",
+      "path": "./images/app",
+      "dependencies": ["builder-image"]
+    },
+    {
+      "name": "cache-image",
+      "path": "./images/cache",
+      "dependencies": ["base-image"]
+    },
+    {
+      "name": "test-image",
+      "path": "./images/test",
+      "dependencies": ["app-image", "cache-image"]
+    },
+    {
+      "name": "dev-image",
+      "path": "./images/dev",
+      "dependencies": ["app-image"]
+    },
+    {
+      "name": "docs-image",
+      "path": "./images/docs",
+      "dependencies": ["base-image"]
+    }
+  ]
+}
