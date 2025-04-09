@@ -135,7 +135,7 @@ func runExample[T cmp.Ordered](t *testing.T, e example[T]) {
 	for n := range layers {
 		if !slices.Equal(layers[n], e.expected[n]) {
 			t.Errorf("Expected layer %d to be %v, got %v", n,
-				e.expected, layers[0])
+				e.expected[n], layers[n])
 		}
 	}
 
